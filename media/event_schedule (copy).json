@@ -1,0 +1,115 @@
+{
+  "events": [
+{
+  "time": 0,
+  "event": "centered_video",
+  "params": {
+    "video_path": "media/browse1.mp4",
+    "start_time": 0,
+    "end_time": 0,
+    "scale": 0.5,
+    "colorkey": [0, 0, 0]
+  }
+},
+    {
+      "time": 0.0,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/moneyhand.jpg",
+        "start_time": 0.0,
+        "end_time": 0.0,
+        "x": null,
+        "y": null,
+        "scale": 0.1
+      }
+    },
+    {
+      "type": "text",
+      "time": 0,
+      "action": "start"
+    },
+    {
+      "type": "text",
+      "time": 396.51,
+      "action": "middle"
+    },
+    {
+      "type": "text",
+      "time": 793.02,
+      "action": "end"
+    },
+    {
+      "type": "visual",
+      "event": "circular_pulsing_net",
+      "start_time": 0.0,
+      "params": {
+        "duration": 0
+      }
+    },
+    {
+      "type": "visual",
+      "event": "psychedelic_background",
+      "start_time": 0.0,
+      "params": {
+        "duration": 0.00
+      }
+    },
+    {
+      "type": "visual",
+      "event": "run_wavy_checker",
+      "start_time": 0.0,
+      "params": {
+        "duration": 793.02
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "arrow_overlay",
+      "params": {
+        "x": 550,
+        "y": 275,
+        "rotation": 275,
+        "start_time": 0.0,
+        "end_time": 0.0,
+        "scale": 0.25,
+        "arrow_image_path": "media/arrowcircle.png"
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "spinning_clock",
+      "params": {
+        "duration_seconds": 0
+      }
+    },
+    {
+      "start_time": 999.0,
+      "event": "tv_countdown"
+    },
+    {
+      "time": 0.0,
+      "event": "drawing_animation",
+      "params": {
+        "image_path": "media/moneypile.png",
+        "duration_seconds": 0
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "two_side_images",
+      "params": {
+        "segment": {
+          "image_left": "media/phone1.png",
+          "image_right": "media/phone2.png",
+          "image_left_scale": 0.0,
+          "image_right_scale": 0.0,
+          "start": 0.0,
+          "end": 0.0,
+          "image_slide_in": true,
+          "image_slide_in_delay": 0.0,
+          "image_slide_in_duration": 0.0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "events": [
+    
+    {
+      "time": 0.0,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot01.png",
+        "start_time": 0.0,
+        "end_time": 0.2,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 0.2,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot02.png",
+        "start_time": 0.2,
+        "end_time": 0.3,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 0.3,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot03.png",
+        "start_time": 0.3,
+        "end_time": 0.4,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 0.4,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot04.png",
+        "start_time": 0.4,
+        "end_time": 0.5,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 0.5,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot05.png",
+        "start_time": 0.5,
+        "end_time": 0.6,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },  
+    {
+      "time": 0.6,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot06.png",
+        "start_time": 0.6,
+        "end_time": 0.7,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },    
+    {
+      "time": 0.7,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot07.png",
+        "start_time": 0.7,
+        "end_time": 0.8,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },   
+    {
+      "time": 0.8,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot08.png",
+        "start_time": 0.8,
+        "end_time": 0.9,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },  
+    {
+      "time": 0.9,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot09.png",
+        "start_time": 0.9,
+        "end_time": 1.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },   
+{
+  "event": "spin_fade_transition",
+  "time": 1.0,
+  "params": {
+    "image1": "media/screenshot10.png",
+    "image2": "media/screenshot11.png",
+    "trigger_time": 1.0,
+    "duration": 0.5
+  }
+},
+    {
+      "time": 1.5,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot12.png",
+        "start_time": 1.1,
+        "end_time": 2.3,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },     
+    {
+      "time": 2.3,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot13.png",
+        "start_time": 2.3,
+        "end_time": 2.4,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    }, 
+    {
+      "time": 2.4,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot14.png",
+        "start_time": 2.4,
+        "end_time": 2.5,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    }, 
+    {
+      "time": 2.5,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot15.png",
+        "start_time": 2.5,
+        "end_time": 2.6,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    }, 
+    {
+      "time": 2.6,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot16.png",
+        "start_time": 2.6,
+        "end_time": 2.7,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 2.7,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot17.png",
+        "start_time": 2.7,
+        "end_time": 2.8,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    }, 
+    {
+      "time": 2.8,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot18.png",
+        "start_time": 2.8,
+        "end_time": 2.9,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 2.9,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot19.png",
+        "start_time": 2.9,
+        "end_time": 3.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 3.0,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/screenshot20.png",
+        "start_time": 3.0,
+        "end_time": 7.1,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+{
+  "time": 3.0,
+  "event": "sprite_float_figure8",
+  "params": {
+    "image_path": "media/suitsmiling.png",
+    "start_time": 3.0,
+    "end_time": 6.0,
+    "rise_duration": 1.0,
+    "center_duration": 4.0,
+    "start_x": null,
+    "start_y": null,
+    "final_x": null,
+    "final_y": null,
+    "scale": 0.5
+  }
+},
+    
+{
+  "event": "spin_fade_transition",
+  "time": 7.1,
+  "params": {
+    "image1": "media/screenshot20.png",
+    "image2": "media/schoolbg.jpg",
+    "trigger_time": 7.1,
+    "duration": 0.5
+  }
+},
+    {
+      "time": 7.6,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/schoolbg.jpg",
+        "start_time": 7.6,
+        "end_time": 32.7,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+{
+  "time": 7.7,
+  "event": "sprite_float_figure8",
+  "params": {
+    "image_path": "media/student.png",
+    "start_time": 7.7,
+    "end_time": 14.7,
+    "rise_duration": 1.0,
+    "center_duration": 4.0,
+    "start_x": null,
+    "start_y": null,
+    "final_x": null,
+    "final_y": null,
+    "scale": 0.5
+  }
+}
+  ]
+}

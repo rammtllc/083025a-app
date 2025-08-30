@@ -1,0 +1,284 @@
+{
+  "events": [
+    {
+      "time": 10.0,
+      "event": "center_video",
+      "params": {
+        "video_path": "media/browse1.mp4",
+        "scale": 0.5,
+        "colorkey": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "time": 60.0,
+      "event": "center_video",
+      "params": {
+        "video_path": "media/browse2.mp4",
+        "scale": 0.5,
+        "colorkey": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "time": 43.0,
+      "event": "center_video",
+      "params": {
+        "video_path": "media/secret.mp4",
+        "scale": 0.5,
+        "colorkey": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "time": 782.0,
+      "event": "video_overlay",
+      "params": {
+        "video_path": "media/end.mp4"
+      }
+    },
+    {
+      "time": 11.0,
+      "event": "show_image",
+      "params": {
+        "image_path": "media/moneyhand.jpg",
+        "start_time": 11.0,
+        "end_time": 12.0,
+        "x": null,
+        "y": null,
+        "scale": 0.1
+      }
+    },
+    {
+      "time": 64.0,
+      "event": "show_image",
+      "params": {
+        "image_path": "media/logoscanvagpt.png",
+        "start_time": 64.0,
+        "end_time": 65.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 66.0,
+      "event": "show_image",
+      "params": {
+        "image_path": "media/youtube-shorts.png",
+        "start_time": 66.0,
+        "end_time": 67.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 67.0,
+      "event": "show_image",
+      "params": {
+        "image_path": "media/automation.png",
+        "start_time": 67.0,
+        "end_time": 68.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 67.0,
+      "event": "show_image",
+      "params": {
+        "image_path": "media/automation.png",
+        "start_time": 67.0,
+        "end_time": 68.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 70.0,
+      "event": "show_image",
+      "params": {
+        "image_path": "media/chatgpt.png",
+        "start_time": 70.0,
+        "end_time": 71.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 78.0,
+      "event": "show_image",
+      "params": {
+        "image_path": "media/b1.png",
+        "start_time": 78.0,
+        "end_time": 79.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 80.0,
+      "event": "show_image",
+      "params": {
+        "image_path": "media/b2.png",
+        "start_time": 80.0,
+        "end_time": 81.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+    {
+      "time": 3.5,
+      "event": "arrow_overlay",
+      "params": {
+        "x": 550,
+        "y": 275,
+        "rotation": 275,
+        "start_time": 3.5,
+        "end_time": 4.0,
+        "scale": 0.25,
+        "arrow_image_path": "media/arrowcircle.png"
+      }
+    },
+    {
+      "time": 5,
+      "event": "arrow_overlay",
+      "params": {
+        "x": 300,
+        "y": 275,
+        "rotation": 0,
+        "start_time": 5,
+        "end_time": 5.5,
+        "scale": 0.25,
+        "arrow_image_path": "media/arrowcircle.png"
+      }
+    },
+    {
+      "time": 14.0,
+      "event": "arrow_overlay",
+      "params": {
+        "x": 200,
+        "y": 325,
+        "rotation": 45,
+        "start_time": 14.0,
+        "end_time": 16.0,
+        "scale": 0.05,
+        "arrow_image_path": "media/arrowcircle.png"
+      }
+    },
+    {
+      "time": 30.0,
+      "event": "video_overlay",
+      "params": {
+        "video_path": "media/smicons1.mp4"
+      }
+    },
+    {
+      "time": 40.0,
+      "event": "video_overlay",
+      "params": {
+        "video_path": "media/goingup.mp4"
+      }
+    },
+    {
+      "time": 41.0,
+      "event": "video_overlay",
+      "params": {
+        "video_path": "media/moneyhold.mp4"
+      }
+    },
+    {
+      "time": 50.0,
+      "event": "video_overlay",
+      "params": {
+        "video_path": "media/h2ai.mp4"
+      }
+    },
+    {
+      "time": 52.0,
+      "event": "video_overlay",
+      "params": {
+        "video_path": "media/smicons2.mp4"
+      }
+    },
+    {
+      "time": 82.0,
+      "event": "video_overlay",
+      "params": {
+        "video_path": "media/01.mp4"
+      }
+    },
+    {
+      "time": 195.0,
+      "event": "video_overlay",
+      "params": {
+        "video_path": "media/02.mp4"
+      }
+    },
+    {
+      "time": 676.0,
+      "event": "video_overlay",
+      "params": {
+        "video_path": "media/03.mp4"
+      }
+    },
+    {
+      "time": 702.0,
+      "event": "video_overlay",
+      "params": {
+        "video_path": "media/04.mp4"
+      }
+    },
+    {
+      "time": 6.0,
+      "event": "spinning_clock",
+      "params": {
+        "duration_seconds": 3
+      }
+    },
+    {
+      "time": 16.0,
+      "event": "tv_countdown"
+    },
+    {
+      "time": 5.0,
+      "event": "drawing_animation",
+      "params": {
+        "image_path": "media/moneypile.png",
+        "duration_seconds": 4
+      }
+    },
+    {
+      "time": 1.0,
+      "event": "two_side_images",
+      "params": {
+        "segment": {
+          "image_left": "media/phone1.png",
+          "image_right": "media/phone2.png",
+          "image_left_scale": 0.3,
+          "image_right_scale": 0.3,
+          "start": 1.0,
+          "end": 6.0,
+          "image_slide_in": true,
+          "image_slide_in_delay": 1.0,
+          "image_slide_in_duration": 1.0
+        }
+      }
+    }
+  ]
+}

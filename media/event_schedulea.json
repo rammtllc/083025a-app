@@ -1,0 +1,55 @@
+{
+  "events": [
+    
+    {
+      "time": 0.0,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/YouTube-Pixabay-2.png",
+        "start_time": 0.0,
+        "end_time": 7.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+{
+  "event": "spin_fade_transition",
+  "time": 7.0,
+  "params": {
+    "image1": "media/YouTube-Pixabay-2.png",
+    "image2": "media/004035office.jpg",
+    "trigger_time": 7.0,
+    "duration": 0.5
+  }
+},
+    {
+      "time": 7.5,
+      "event": "full_image",
+      "params": {
+        "image_path": "media/004035office.jpg",
+        "start_time": 7.5,
+        "end_time": 14.0,
+        "x": null,
+        "y": null,
+        "scale": 0.5
+      }
+    },
+{
+  "time": 0.0,
+  "event": "sprite_float_figure8",
+  "params": {
+    "image_path": "media/opening_screen.png",
+    "start_time": 0.0,
+    "end_time": 7.0,
+    "rise_duration": 1.0,
+    "center_duration": 4.0,
+    "start_x": null,
+    "start_y": null,
+    "final_x": null,
+    "final_y": null,
+    "scale": 0.5
+  }
+}
+  ]
+}

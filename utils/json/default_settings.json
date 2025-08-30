@@ -1,0 +1,11 @@
+{
+  "font_name": "/home/cool/Desktop/2/media/LuckiestGuy-Regular.ttf",
+  "font_size": 24,
+  "show_timestamp": true,
+  "record_video": false,
+  "timestamp_mode": "word",
+  "timestamps_file_word": "/home/cool/Desktop/2/app3/media/demo-word.txt",
+  "timestamps_file_sentence": "/home/cool/Desktop/2/app3/media/demo-sentence.txt",
+  "event_schedule_path": "/home/cool/Desktop/2/app3/media/event_schedule.json",
+  "voiceover_path": "/home/cool/Desktop/2/app3/media/demo.mp3"
+}
