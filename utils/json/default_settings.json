@@ -1,11 +1,14 @@
 {
-  "font_name": "/home/cool/Desktop/2/media/LuckiestGuy-Regular.ttf",
+  "font_name": "/home/cool/Desktop/2/app4/LuckiestGuy-Regular.ttf",
   "font_size": 24,
   "show_timestamp": true,
   "record_video": false,
   "timestamp_mode": "word",
-  "timestamps_file_word": "/home/cool/Desktop/2/app3/media/demo-word.txt",
-  "timestamps_file_sentence": "/home/cool/Desktop/2/app3/media/demo-sentence.txt",
-  "event_schedule_path": "/home/cool/Desktop/2/app3/media/event_schedule.json",
-  "voiceover_path": "/home/cool/Desktop/2/app3/media/demo.mp3"
+  "timestamps_file_word": "/home/cool/Desktop/2/app4/2025-08-3010-39-46-word.txt",
+  "timestamps_file_sentence": "/home/cool/Desktop/2/app4/2025-08-3010-39-46-sentence.txt",
+  "timestamps_file_capitals": "/home/cool/Desktop/2/app4/2025-08-3010-39-46-capitals.txt",
+  "event_schedule_path": "/home/cool/Desktop/2/app4/media/event_schedule.json",
+  "voiceover_path": "/home/cool/Desktop/2/app4/2025-08-3010-39-46.mp3",
+  "vocals_file": null,
+  "no_audio_file": null
 }

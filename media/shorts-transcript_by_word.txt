@@ -1,8 +1,0 @@
-000 Hello
-001 world
-002 this
-003 is
-004 a
-005 dummy
-006 timestamp
-007 file

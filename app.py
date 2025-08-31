@@ -227,55 +227,133 @@ def draw_video_frame(cap, renderer):
     renderer.copy(tex)
     renderer.present()
     return True
+###########################################################################################
+import multiprocessing
+import time
+import pygame
+from pyvidplayer2 import Video
+from moviepy.video.io.VideoFileClip import VideoFileClip
+import av
+import numpy as np
+import os
+
+VIDEO_PATH_PYVID = "output.mp4"
 
 # ----------------------------
-# Main program
+# Child process: PyVidPlayer window (muted)
 # ----------------------------
-def main():
+# ----------------------------
+# Child process: PyVidPlayer window (muted)
+# ----------------------------
+def pyvidplayer_window(start_time, exit_flag):   # <-- add exit_flag here
     pygame.init()
-    screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("YouTube Video Maker")
 
-    # --- set up video window ---
-    video_path = os.path.join(MEDIA_DIR, "demo.mp4")
-    cap = None
-    video_surf = None
-    if os.path.exists(video_path):
-        cap = cv2.VideoCapture(video_path)
-        if cap.isOpened():
-            video_surf = pygame.Surface((WIDTH // 2, HEIGHT))  # right side
-        else:
-            print(f"[ERROR] Could not open video: {video_path}")
-            cap = None
+    # Get video dimensions
+    clip = VideoFileClip(VIDEO_PATH_PYVID)
+    vid_width, vid_height = clip.size
+
+    win = pygame.display.set_mode((vid_width, vid_height), pygame.RESIZABLE)
+    pygame.display.set_caption("PyVidPlayer Window (Muted)")
+
+    vid = Video(VIDEO_PATH_PYVID)
+    if hasattr(vid, "_sound") and vid._sound is not None:
+        vid._sound.stop()
+        vid._sound = None  # mute
 
     clock = pygame.time.Clock()
     running = True
+    temp_surface = pygame.Surface((vid_width, vid_height))
 
-    # --- preload settings and data once ---
+    while running and not exit_flag.value:          # <-- check exit_flag
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                exit_flag.value = True  
+                running = False
+            elif event.type == pygame.VIDEORESIZE:
+                win_width, win_height = event.w, event.h
+                win = pygame.display.set_mode((win_width, win_height), pygame.RESIZABLE)
+
+        vid.update()
+        temp_surface.fill((0, 0, 0))
+        vid.draw(temp_surface, (0, 0))
+
+        scaled_surface = pygame.transform.smoothscale(temp_surface, win.get_size())
+        win.blit(scaled_surface, (0, 0))
+        pygame.display.update()
+
+        # Sync using shared start_time (optional for logic)
+        elapsed = time.time() - start_time.value
+
+        if not vid.active:
+            running = False
+
+        clock.tick(60)
+
+    vid.close()
+    pygame.quit()
+
+
+
+# ----------------------------
+# Main PyAV window (no changes inside main)
+# ----------------------------
+# ----------------------------
+# Main PyAV window (video removed, window resized to video dimensions)
+# ----------------------------
+def main(start_time, exit_flag):                  # <-- add exit_flag
+    import pygame
+    import os
+    import time
+
+    # --- HARD-CODED DELAY IN SECONDS ---
+    DELAY_SECONDS = 0.695
+    time.sleep(DELAY_SECONDS)
+
+    # --- Set window size to match child video dimensions ---
+    video_path = os.path.join(BASE_DIR, "output.mp4")
+    import av
+    container = av.open(video_path)
+    stream = container.streams.video[0]
+    video_width, video_height = stream.width, stream.height
+    container.close()
+
+    global WIDTH, HEIGHT
+    WIDTH = video_width
+    HEIGHT = video_height
+
+    pygame.init()
+    screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
+    pygame.display.set_caption("YouTube Video Maker")
+    clock = pygame.time.Clock()
+
+    # --- load settings ---
     settings = load_json(DEFAULT_SETTINGS_PATH, DEFAULT_SETTINGS_CONTENT)
-    for key in ["font_name","timestamps_file_word","timestamps_file_sentence","event_schedule_path","voiceover_path"]:
-        settings[key] = resolve_path(BASE_DIR, settings.get(key), DEFAULT_SETTINGS_CONTENT[key])
+    for key in ["font_name", "timestamps_file_word", "timestamps_file_sentence",
+                "event_schedule_path", "voiceover_path"]:
+        settings[key] = resolve_path(BASE_DIR, settings.get(key), DEFAULT_SETTINGS_CONTENT.get(key, ""))
 
     if not os.path.exists(settings["event_schedule_path"]):
         create_dummy_files()
 
     timestamps_file = load_timestamps_file(settings)
     timestamps = parse_timestamps_file(timestamps_file)
-
     data = load_json(settings["event_schedule_path"], {})
     event_schedule = data.get("events", [])
 
-    # Start screen once
     settings = start_screen(screen, WIDTH, HEIGHT, settings)
     save_json(DEFAULT_SETTINGS_PATH, settings)
 
-    # --- main loop: update visuals + video together ---
-    while running:
+    running = True
+    while running and not exit_flag.value:       # <-- check exit_flag
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                exit_flag.value = True           # <-- set flag on close
                 running = False
+            elif event.type == pygame.VIDEORESIZE:
+                win_width, win_height = event.w, event.h
+                screen = pygame.display.set_mode((win_width, win_height), pygame.RESIZABLE)
 
-        # run one step of visuals
+        # --- draw visuals on the entire window ---
         run_visuals(
             timestamps,
             event_schedule,
@@ -286,24 +364,42 @@ def main():
             screen=screen
         )
 
-        # --- RIGHT: video frame ---
-        if cap and video_surf:
-            ret, frame = cap.read()
-            if not ret:
-                cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
-                ret, frame = cap.read()
-            if ret:
-                frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                frame_resized = cv2.resize(frame_rgb, (WIDTH // 2, HEIGHT))
-                pygame.surfarray.blit_array(video_surf, frame_resized.swapaxes(0, 1))
-                screen.blit(video_surf, (WIDTH // 2, 0))
-
         pygame.display.flip()
-        clock.tick(30)
+        clock.tick(60)
 
-    if cap:
-        cap.release()
+    pygame.quit()
 
+
+# ----------------------------
+# Launch both windows in sync
+# ----------------------------
+#if __name__ == "__main__":
+#    multiprocessing.set_start_method("spawn")
+#    start_time = multiprocessing.Value('d', time.time())  # shared start timestamp
+   # <-- ADD THIS -->
+#    exit_flag = multiprocessing.Value('b', False)
+#    p = multiprocessing.Process(target=pyvidplayer_window, args=(start_time, exit_flag))
+#    main(start_time, exit_flag)   # <-- PASS exit_flag here too
+#    exit_flag.value = True   # make sure child stops
+#    p.join()
 
 if __name__ == "__main__":
-    main()
+    # Ensure safe multiprocessing start method
+    multiprocessing.set_start_method("spawn", force=True)
+
+    # Shared start timestamp
+    start_time = multiprocessing.Value('d', time.time())
+
+    # Shared exit flag for clean shutdown
+    exit_flag = multiprocessing.Value('b', False)
+
+    # Launch the PyVidPlayer video window as a child process
+    p = multiprocessing.Process(target=pyvidplayer_window, args=(start_time, exit_flag))
+    p.start()
+
+    # Run the main PyAV window
+    main(start_time, exit_flag)
+
+    # Ensure the child process stops when main exits
+    exit_flag.value = True
+    p.join()

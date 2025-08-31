@@ -1,0 +1,43 @@
+﻿{
+  "events": [
+    {
+      "type": "text",
+      "time": 0,
+      "action": "start"
+    },
+    {
+      "type": "text",
+      "time": 396.51,
+      "action": "middle"
+    },
+    {
+      "type": "text",
+      "time": 475.92,
+      "action": "end"
+    },
+    {
+      "type": "visual",
+      "event": "circular_pulsing_net",
+      "start_time": 0.0,
+      "params": {
+        "duration": 0
+      }
+    },
+    {
+      "type": "visual",
+      "event": "psychedelic_background",
+      "start_time": 0.0,
+      "params": {
+        "duration": 0.00
+      }
+    },
+    {
+      "type": "visual",
+      "event": "run_wavy_checker",
+      "start_time": 0.0,
+      "params": {
+        "duration": 475.92
+      }
+    }
+  ]
+}

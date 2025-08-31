@@ -150,7 +150,7 @@ def update_event_schedule_from_mp3(settings_path, voiceover_path):
         {"time": 2 * third, "action": "end"}
     ]
 
-    with open(settings_path, "r") as f:
+    with open(settings_path, "r", encoding="utf-8-sig") as f:
         settings = json.load(f)
 
     events_file = settings.get("event_schedule_path") or os.path.join(
@@ -265,7 +265,7 @@ def run_visuals(timestamps, event_schedule, font_name, font_size, settings, data
     # Load event schedule
     # ----------------------------
     if os.path.exists(events_file):
-        with open(events_file, "r") as f:
+        with open(events_file, "r", encoding="utf-8-sig") as f:
             file_data = json.load(f)
         event_schedule[:] = file_data.get("events", [])
     else:
@@ -348,7 +348,8 @@ def run_visuals(timestamps, event_schedule, font_name, font_size, settings, data
         # Clear left and right halves
         screen.fill((30,30,30), rect=pygame.Rect(0,0,800,600))    # left visuals
         screen.fill((0,0,0), rect=pygame.Rect(800,0,800,600))     # right video
-        left_surface = screen.subsurface((0,0,800,600))
+        #left_surface = screen.subsurface((0,0,800,600))
+        left_surface = screen.subsurface(screen.get_rect())  # fills the entire window
 
         # ----------------------------
         # LEFT: Backgrounds
@@ -408,16 +409,16 @@ def run_visuals(timestamps, event_schedule, font_name, font_size, settings, data
         # ----------------------------
         # RIGHT: Video
         # ----------------------------
-        if cap and video_surf:
-            ret, frame = cap.read()
-            if not ret:
-                cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
-                ret, frame = cap.read()
-            if ret:
-                frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                frame_resized = cv2.resize(frame_rgb, (video_area.width, video_area.height))
-                pygame.surfarray.blit_array(video_surf, frame_resized.swapaxes(0,1))
-                screen.blit(video_surf, (video_area.x, video_area.y))
+        #if cap and video_surf:
+        #    ret, frame = cap.read()
+        #    if not ret:
+        #        cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+        #        ret, frame = cap.read()
+        #    if ret:
+        #        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        #        frame_resized = cv2.resize(frame_rgb, (video_area.width, video_area.height))
+        #        pygame.surfarray.blit_array(video_surf, frame_resized.swapaxes(0,1))
+        #        screen.blit(video_surf, (video_area.x, video_area.y))
 
         # ----------------------------
         # Display

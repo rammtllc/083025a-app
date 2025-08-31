@@ -1,4 +1,4 @@
-{
+﻿{
   "events": [
     {
       "type": "text",
@@ -7,12 +7,12 @@
     },
     {
       "type": "text",
-      "time": 396.51,
+      "time": 0,
       "action": "middle"
     },
     {
       "type": "text",
-      "time": 793.02,
+      "time": 490.00,
       "action": "end"
     },
     {
@@ -20,7 +20,7 @@
       "event": "circular_pulsing_net",
       "start_time": 0.0,
       "params": {
-        "duration": 0
+        "duration": 490.00
       }
     },
     {
@@ -28,15 +28,7 @@
       "event": "psychedelic_background",
       "start_time": 0.0,
       "params": {
-        "duration": 0.00
-      }
-    },
-    {
-      "type": "visual",
-      "event": "run_wavy_checker",
-      "start_time": 0.0,
-      "params": {
-        "duration": 793.02
+        "duration": 0
       }
     }
   ]
